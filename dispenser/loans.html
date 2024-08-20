@@ -1,0 +1,192 @@
+<!--
+<?php 
+ 
+if (isset($_POST["submit"])) {
+    $product = validate($_POST["product"]);
+    $quantity = validate($_POST["quantity"]);
+    $measure = validate($_POST["measure"]);
+    $amount_paid = validate($_POST["paid"]);
+    $amount_due = validate($_POST["measure"]);
+    $payment_mode = validate($_POST["payment"]);  //cash or mobile money services
+    $customer_name = validate($_POST["name"]);
+    $customer_phone = validate($_POST["phone"]);
+   
+
+    if ($product != "" && $quantity != "" && measure != "" && payment_mode != ""
+       && customer_name != "" && customer_phone != "" ) 
+       {
+        $data = [
+            "product" => $product
+            "quantity" => $quantity 
+            "measure" => $measure 
+            "payment" => $payment_mode
+            "customer_name" => $customer_name 
+            "customer_phone" => $customer_phone
+            "pre_order" => $pre_order 
+        ];
+
+        $columns = array_keys($data);
+        $values = array_values($data);
+
+        $finalColumn = implode(",", $columns);
+        $finalValues = "'" . implode("', '", $values) . "'";
+
+        $query = "INSERT INTO (table name) ($finalColumn) VALUES ($finalValues)";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            redirect("dispenser_loan.php", "Submitted created successfully!");
+        } else {
+            redirect("dispenser_loan.php", "Something went wrong!");
+        }
+    } else {
+        redirect("dispenser_loan.php", "Please fill required fields!");
+    }
+}
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loans</title>
+
+    <!-- links -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <a href="#" class="back-btn">
+            <img src="boxicons/line/left-arrow-alt.svg" alt="left-arrow-alt" />
+          </a>
+          <div>
+            <h1>Dispenser</h1>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Tabs -->
+        <div class="payment-tabs">
+          <a href="index.html">
+            <div class="paid-tab">
+                <h3>Fully Paid / Malipo Kamili</h3>
+              </div>
+          </a>
+          <a href="loans.html">
+            <div class="loan-tab">
+                <h3>Loans / Mikopo</h3>
+              </div>
+          </a>
+        </div>
+
+        <!--dispense products-->
+        <div class="dispenser">
+          <h2>Dispenser</h2>
+
+          <form action="" method="post" class="form">
+            <!-- product info -->
+            <div class="form-control">
+              <label for=""
+                >Product / Bidhaa <span class="required">*</span></label
+              >
+              <input type="text" name="product" id="product" />
+            </div>
+            <div class="form-control">
+              <label for="">Quantity / Kiasi <span class="required">*</spa></label>
+              <input type="number" name="quantity" id="quantity" />
+            </div>
+            <div class="form-control">
+              <label for="">Measure / Kipimo <span class="required">*</span></label>
+              <select name="measure" id="measure">
+                <option value="inches">Inches / inchi</option>
+                <option value="kilograms">Kilograms / kilo</option>
+                <option value="bags">Bags / mifuki</option>
+              </select>
+            </div>
+            <div class="form-control">
+                <label for="">Amount paid / Malipo ya Awali <span class="required">*</spa></label>
+                <input type="number" name="quantity" id="quantity" />
+            </div>
+            <div class="form-control">
+                <label for="">Due Amount / Kiasi Kilichobaki <span class="required">*</spa></label>
+                <input type="number" name="quantity" id="quantity" />
+            </div>
+            <div class="form-control">
+              <label for=""
+                >Payment / Malipo <span class="required">*</span></label
+              >
+              <select name="payment" id="payment">
+                <option value="volvo">Cash / Fedha Taslimu</option>
+                <option value="saab">Mobile Money / Malipo kwa Simu </option>
+              </select>
+            </div>
+
+            <!-- customer info -->
+            <div class="form-control">
+              <label for=""
+                >Customer Name / Jina la Mteja <span class="required">*</span></label
+              >
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="form-control">
+              <label for=""
+                >Phone number / Namba ya Simu <span class="required">*</span></label
+              >
+              <input type="tel" name="phone" id="phone" required />
+            </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-control">
+              <span></span>
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+          </form>
+
+          <!-- Orders Display -->
+          <div class="dispensed-products">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Batch No.</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Measure</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                  <th>Paid / Amelipa</th>
+                  <th>Due / Deni</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0001</td>
+                  <td>Cement</td>
+                  <td>20</td>
+                  <td>bags</td>
+                  <td>16000</td>
+                  <td>380000</td>
+                  <td>200000</td>
+                  <td>180000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="confirm-cancel-btn">
+              <a href="#" class="confirm-btn">Confirm</a>
+              <a href="#" class="cancel-btn">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

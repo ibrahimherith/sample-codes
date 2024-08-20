@@ -1,0 +1,268 @@
+/* 
+***
+ GENERAL CSS
+*** 
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background-color: rgb(2, 2, 51);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  width: 90%;
+}
+
+.required {
+  color: red;
+}
+
+/*
+*** 
+DISPENSER HEADER
+***
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.03s ease-in-out;
+}
+.back-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.back-btn:hover {
+  background-color: gray;
+}
+
+.back-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.header-title h1 {
+  color: white;
+}
+/* END DISPENSER HEADER */
+
+/*
+*** 
+DISPENSER TABS
+***
+*/
+.payment-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-top: 20px;
+}
+
+.paid-tab,
+.loan-tab {
+  width: 500px;
+  padding: 20px 40px;
+}
+
+.paid-tab {
+  background-color: #0fa958;
+}
+
+.paid-tab:hover {
+  background-color: #068541;
+}
+
+.loan-tab {
+  background-color: blue;
+}
+
+.loan-tab:hover {
+  background-color: #3030ca;
+}
+
+@media screen and (max-width: 768px) {
+  .payment-tabs {
+    flex-direction: column;
+  }
+
+  .paid-tab,
+  .loan-tab {
+    width: 100%;
+  }
+
+  .loan-tab {
+    margin-top: 20px;
+  }
+}
+
+/*
+**
+END DISPENSER TABS 
+**
+*/
+
+/*
+*
+* 
+DISPENSER CONTENT
+*
+*
+*/
+.dispenser {
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-control,
+.form-control-order {
+  display: flex;
+}
+
+.form-control {
+  flex-direction: column;
+  width: 250px;
+  padding: 10px;
+}
+
+.form-control input,
+.form-control select {
+  height: 30px;
+  padding: 5px;
+}
+
+.form-control-order {
+  flex-direction: row;
+  align-items: center;
+  width: 250px;
+  padding: 10px;
+}
+
+.form-control-order input {
+  margin-left: 10px;
+}
+
+.submit-btn {
+  padding: 8px;
+  background-color: #0fa958;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(2, 110, 20);
+}
+
+.dispensed-products {
+  margin-top: 30px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.confirm-cancel-btn {
+  margin-top: 20px;
+}
+
+.confirm-btn,
+.cancel-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.03s ease-in-out;
+}
+
+.confirm-btn {
+  background-color: #0fa958;
+}
+
+.confirm-btn:hover {
+  background-color: rgb(2, 110, 20);
+}
+
+.cancel-btn {
+  background-color: rgb(245, 31, 31);
+}
+
+.cancel-btn:hover {
+  background-color: rgb(202, 4, 4);
+}
+
+/* Basic styling for the checkbox container */
+.checkbox-container {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  /* Increase font size for better visibility */
+}
+
+/* Larger checkbox styling */
+.checkbox-container input[type="checkbox"] {
+  transform: scale(2);
+  /* Scale the checkbox to make it larger */
+  margin-right: 10px;
+  /* Space between checkbox and label */
+}
+
+/* Styling for the input field */
+.input-container {
+  margin-top: 20px;
+}
+
+/* END DISPENSER CONTENT */
